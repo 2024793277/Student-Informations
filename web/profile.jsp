@@ -3,7 +3,6 @@
 <html>
 <head>
     <title>Your Profile</title>
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
@@ -33,8 +32,6 @@
         <div class="row justify-content-center">
             <div class="col-lg-7">
                 <div class="card profile-card p-4">
-
-                    <!-- Success message -->
                     <div class="alert alert-success mb-4" role="alert">
                         Profile submitted successfully!
                     </div>
@@ -65,15 +62,11 @@
                     </dl>
 
                     <hr class="my-4"/>
-
-                    <!-- Buttons row -->
                     <div class="d-flex justify-content-between">
                         <!-- Back to home (form) -->
                         <a href="index.html" class="btn btn-outline-secondary">
                             Back to Home
                         </a>
-
-                        <!-- Submit another profile (same as home, but different text) -->
                         <a href="index.html" class="btn btn-primary">
                             Submit Another Profile
                         </a>
