@@ -3,33 +3,88 @@
 <html>
 <head>
     <title>Your Profile</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-        body { font-family: Arial; background: #e8f0fe; padding: 20px; }
-        .card {
-            background: white; width: 600px; margin: auto; padding: 20px;
-            border-radius: 12px; box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        body {
+            background: #eaf1ff;
+            font-family: Arial, sans-serif;
         }
-        h2 { color: #333; }
-        .info { margin-top: 15px; }
-        .label { font-weight: bold; color: #555; }
+        .page-wrapper {
+            min-height: 100vh;
+        }
+        .profile-card {
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        }
+        .info-label {
+            font-weight: 600;
+            color: #555;
+        }
+        .info-value {
+            color: #222;
+        }
     </style>
 </head>
-
 <body>
-    <div class="card">
-        <h2>Your Personal Profile</h2>
+<div class="page-wrapper d-flex align-items-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <div class="card profile-card p-4">
 
-        <div class="info"><span class="label">Name:</span> ${name}</div>
-        <div class="info"><span class="label">Student ID:</span> ${studentId}</div>
-        <div class="info"><span class="label">Program:</span> ${program}</div>
-        <div class="info"><span class="label">Email:</span> ${email}</div>
-        <div class="info"><span class="label">Hobbies:</span> ${hobbies}</div>
+                    <!-- Success message -->
+                    <div class="alert alert-success mb-4" role="alert">
+                        Profile submitted successfully!
+                    </div>
 
-        <div class="info">
-            <span class="label">Self Introduction:</span>
-            <p>${intro}</p>
+                    <h3 class="mb-3">Your Personal Profile</h3>
+                    <p class="text-muted mb-4">Here are the details you submitted.</p>
+
+                    <dl class="row">
+                        <dt class="col-sm-4 info-label">Name</dt>
+                        <dd class="col-sm-8 info-value">${name}</dd>
+
+                        <dt class="col-sm-4 info-label">Student ID</dt>
+                        <dd class="col-sm-8 info-value">${studentId}</dd>
+
+                        <dt class="col-sm-4 info-label">Program</dt>
+                        <dd class="col-sm-8 info-value">${program}</dd>
+
+                        <dt class="col-sm-4 info-label">Email</dt>
+                        <dd class="col-sm-8 info-value">${email}</dd>
+
+                        <dt class="col-sm-4 info-label">Hobbies</dt>
+                        <dd class="col-sm-8 info-value">${hobbies}</dd>
+
+                        <dt class="col-sm-4 info-label">Self Introduction</dt>
+                        <dd class="col-sm-8 info-value">
+                            <p class="mb-0">${intro}</p>
+                        </dd>
+                    </dl>
+
+                    <hr class="my-4"/>
+
+                    <!-- Buttons row -->
+                    <div class="d-flex justify-content-between">
+                        <!-- Back to home (form) -->
+                        <a href="index.html" class="btn btn-outline-secondary">
+                            Back to Home
+                        </a>
+
+                        <!-- Submit another profile (same as home, but different text) -->
+                        <a href="index.html" class="btn btn-primary">
+                            Submit Another Profile
+                        </a>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
