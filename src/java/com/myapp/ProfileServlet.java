@@ -1,6 +1,7 @@
 package com.myapp;
 
 import java.io.IOException;
+import java.sql.*;
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
@@ -8,29 +9,37 @@ import javax.servlet.http.*;
 @WebServlet("/ProfileServlet")
 public class ProfileServlet extends HttpServlet {
 
-    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        request.setCharacterEncoding("UTF-8"); // safe for special chars
+        ProfileBean p = new ProfileBean();
+        p.setStudentId(request.getParameter("studentId"));
+        p.setName(request.getParameter("name"));
+        p.setProgram(request.getParameter("program"));
+        p.setEmail(request.getParameter("email"));
+        p.setHobbies(request.getParameter("hobbies"));
+        p.setIntro(request.getParameter("intro"));
 
-        // Retrieve form values
-        String name = request.getParameter("name");
-        String studentId = request.getParameter("studentId");
-        String program = request.getParameter("program");
-        String email = request.getParameter("email");
-        String hobbies = request.getParameter("hobbies");
-        String intro = request.getParameter("intro");
+        try {
+            Connection con = DBConnection.getConnection();
+            String sql = "INSERT INTO profiles (studentId, name, program, email, hobbies, intro) VALUES (?, ?, ?, ?, ?, ?)";
+            PreparedStatement ps = con.prepareStatement(sql);
 
-        // Pass data to JSP
-        request.setAttribute("name", name);
-        request.setAttribute("studentId", studentId);
-        request.setAttribute("program", program);
-        request.setAttribute("email", email);
-        request.setAttribute("hobbies", hobbies);
-        request.setAttribute("intro", intro);
+            ps.setString(1, p.getStudentId());
+            ps.setString(2, p.getName());
+            ps.setString(3, p.getProgram());
+            ps.setString(4, p.getEmail());
+            ps.setString(5, p.getHobbies());
+            ps.setString(6, p.getIntro());
 
-        RequestDispatcher rd = request.getRequestDispatcher("profile.jsp");
-        rd.forward(request, response);
+            ps.executeUpdate();
+            con.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        request.setAttribute("profile", p);
+        request.getRequestDispatcher("profile.jsp").forward(request, response);
     }
 }

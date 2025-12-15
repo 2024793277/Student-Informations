@@ -41,19 +41,23 @@
 
                     <dl class="row">
                         <dt class="col-sm-4 info-label">Name</dt>
-                        <dd class="col-sm-8 info-value">${profile.name}</dd>
+                        <dd class="col-sm-8 info-value">${name}</dd>
+
                         <dt class="col-sm-4 info-label">Student ID</dt>
-                        <dd class="col-sm-8 info-value">${profile.studentId}</dd>
+                        <dd class="col-sm-8 info-value">${studentId}</dd>
+
                         <dt class="col-sm-4 info-label">Program</dt>
-                        <dd class="col-sm-8 info-value">${profile.program}</dd>
+                        <dd class="col-sm-8 info-value">${program}</dd>
+
                         <dt class="col-sm-4 info-label">Email</dt>
-                        <dd class="col-sm-8 info-value">${profile.email}</dd>
+                        <dd class="col-sm-8 info-value">${email}</dd>
+
                         <dt class="col-sm-4 info-label">Hobbies</dt>
-                        <dd class="col-sm-8 info-value">${profile.hobbies}</dd>
+                        <dd class="col-sm-8 info-value">${hobbies}</dd>
+
                         <dt class="col-sm-4 info-label">Self Introduction</dt>
                         <dd class="col-sm-8 info-value">
-                        <p class="mb-0">${profile.intro}</p>
-                        </dd>
+                            <p class="mb-0">${intro}</p>
                         </dd>
                     </dl>
 
@@ -63,9 +67,6 @@
                         <a href="index.html" class="btn btn-outline-secondary">
                             Back to Home
                         </a>
-                        <a href="viewProfile.jsp" class="btn btn-warning">
-                            Search Another ID
-                         </a>
                         <a href="index.html" class="btn btn-primary">
                             Submit Another Profile
                         </a>
