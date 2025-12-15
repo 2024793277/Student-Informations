@@ -30,7 +30,7 @@
 
             <div class="card p-4">
 
-                <h3 class="mb-3">? All Student Profiles</h3>
+                <h3 class="mb-3">All Student Profiles</h3>
                 <p class="text-muted">Search, edit, or delete student profile records.</p>
 
                 <!-- SEARCH FORM -->
@@ -115,7 +115,7 @@
 
                 <div class="mt-4 text-end">
                     <a href="index.html" class="btn btn-outline-secondary">
-                        ? Back to Home
+                       Back to Home
                     </a>
                 </div>
 
